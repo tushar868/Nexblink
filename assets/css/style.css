@@ -178,7 +178,7 @@ body {
 .section-subtitle {
   color: var(--royal-blue-light);
   font-family: var(--ff-poppins);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-700);
   text-transform: uppercase;
   margin-block-end: 10px;
@@ -427,93 +427,6 @@ body {
 
 
 
-
-/*-----------------------------------*\
-  #DOCTOR
-\*-----------------------------------*/
-
-.doctor .section-title { margin-block-end: 50px; }
-
-.doctor-card .card-banner {
-  border-radius: var(--radius-4);
-  overflow: hidden;
-  margin-block-end: 25px;
-}
-
-.doctor-card {
-  padding: 30px;
-  border: 1px solid var(--light-gray);
-  border-radius: var(--radius-4);
-  text-align: center;
-  min-height: 100%;
-}
-
-.doctor-card .card-title {
-  font-size: var(--fs-4);
-  transition: var(--transition);
-}
-
-.doctor-card:is(:hover, :focus-within) .card-title { color: var(--royal-blue-light); }
-
-.doctor-card .card-subtitle {
-  color: var(--royal-blue-light);
-  margin-block: 10px 15px;
-}
-
-.doctor-card .card-social-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.doctor-card .card-social-link {
-  background-color: var(--lavender-web);
-  color: var(--royal-blue-light);
-  font-size: 16px;
-  padding: 12px;
-  border-radius: 50%;
-  transition: var(--transition);
-}
-
-.doctor-card .card-social-link:is(:hover, :focus) {
-  background-color: var(--royal-blue-light);
-  color: var(--white);
-}
-
-.has-scrollbar {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  margin-inline: 15px;
-  padding-block-end: 40px;
-  margin-block-end: -20px;
-  scroll-snap-type: inline mandatory;
-}
-
-.scrollbar-item {
-  min-width: 100%;
-  scroll-snap-align: start;
-}
-
-.has-scrollbar::-webkit-scrollbar { height: 10px; }
-
-.has-scrollbar::-webkit-scrollbar-track {
-  background-color: var(--light-gray);
-  border-radius: var(--radius-4);
-}
-
-.has-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--royal-blue-light);
-  border-radius: var(--radius-4);
-}
-
-.has-scrollbar::-webkit-scrollbar-button { width: calc(25% - 30px); }
-
-
-
-
-
 /*-----------------------------------*\
   #CTA
 \*-----------------------------------*/
@@ -606,6 +519,48 @@ body {
 
 .blog-card .card-link:is(:hover, :focus)::after { background-color: var(--oxford-blue-1); }
 
+
+
+
+/*-----------------------------------*\
+  #DETAIL-BLOG
+\*-----------------------------------*/
+
+.detail-blog-banner { display: none; }
+
+.detail-blog { padding-block-end: 0; }
+
+.detail-blog .section-subtitle { 
+  font-size: var(--fs-3);
+  margin-block-end: 20px; 
+  margin-block-start: 40px;
+}
+
+.detail-blog .section-title { 
+  font-size: var(--fs-4);
+  margin-block-end: 30px; 
+  margin-block-start: 10px;
+}
+
+.detail-blog .section-text-title { 
+  font-size: var(--fs-5);
+  margin-block-end: 10px; 
+  margin-block-start: 30px;
+}
+
+.detail-blog .section-text { margin-block-end: 20px; }
+
+.detail-blog-list {
+  display: grid;
+  gap: 15px;
+}
+
+.detail-blog img{
+ 
+  height: auto;
+  margin: 30px auto;
+  max-width: 75%;
+}
 
 
 /*-----------------------------------*\
@@ -1039,6 +994,20 @@ textarea.input-field {
   .blog-list { grid-template-columns: 1fr 1fr; }
 
 
+
+  /**
+   * DETAIL-BLOG
+   */
+
+   .detail-blog-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+  }
+
+  
+  
+
+
   /**
    * CONTACT
    */
@@ -1241,6 +1210,22 @@ textarea.input-field {
    */
 
   .blog-list { grid-template-columns: repeat(3, 1fr); }
+
+
+  /**
+   * SERVICE
+   */
+
+   .detail-blog-list { grid-template-columns: repeat(3, 1fr); }
+
+   .detail-blog-banner {
+     display: block;
+     grid-column: 2 / 3;
+     grid-row: 1 / 4;
+     align-self: center;
+   }
+
+
 
 
   /**
