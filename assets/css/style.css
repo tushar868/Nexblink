@@ -35,6 +35,8 @@
   --black_10: hsla(0, 0%, 0%, 0.1);
   --black_8: hsla(0, 0%, 0%, 0.08);
   --white: hsl(0, 0%, 100%);
+  --white-1: hsl(0, 0%, 100%);
+  --white-2: hsl(0, 14%, 98%);
   --black: hsl(0, 0%, 0%);
   --jet: hsl(0, 0%, 20%);
 
@@ -84,6 +86,7 @@
    * border radius
    */
 
+  --radius-2: 2px;
   --radius-6: 6px;
   --radius-4: 4px;
 
@@ -91,6 +94,8 @@
    * transition
    */
 
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease;
   --transition: 0.25s ease;
   --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
 
@@ -124,18 +129,21 @@ img,
 span,
 input,
 button,
+textarea,
 ion-icon { display: block; }
 
 img { height: auto; }
 
 input,
+textarea,
 button {
   background: none;
   border: none;
   font: inherit;
 }
 
-input { width: 100%; }
+input,
+textarea { width: 100%; }
 
 button { cursor: pointer; }
 
@@ -600,6 +608,114 @@ body {
 
 
 
+/*-----------------------------------*\
+  #CONTACT
+\*-----------------------------------*/
+
+.contact { background-color: var(--white); }
+
+.contact .section-text { margin-block: 5px 35px; }
+
+.contact-form {
+  background-color: var(--white-1);
+  padding: 20px;
+  border-radius: var(--radius-2);
+  margin-block-end: 30px;
+  box-shadow: var(--shadow-1);
+  margin-top: 30px;
+}
+
+.input-field {
+  background-color: var(--white-2);
+  color: var(--eerie-black);
+  font-size: var(--fs-6);
+  padding: 15px;
+  border-radius: var(--radius-2);
+  outline: 1px solid transparent;
+  outline-offset: 0;
+  margin-block-end: 15px;
+}
+
+.input-field::-webkit-inner-spin-button { display: none; }
+
+.input-field:focus { outline-color: var(--royal-blue-light); }
+
+.input-field::placeholder { transition: var(--transition-1); }
+
+.input-field:focus::placeholder { opacity: 0; }
+
+textarea.input-field {
+  resize: vertical;
+  min-height: 80px;
+  height: 100px;
+  max-height: 200px;
+  overscroll-behavior: contain;
+}
+
+.checkbox {
+  width: max-content;
+  margin-block-start: 5px;
+  accent-color: var(--oxford-blue-3);
+}
+
+.label-link {
+  display: inline-block;
+  color: var(--oxford-blue-3);
+}
+
+.label-link:is(:hover, :focus) { text-decoration: underline; }
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-block-end: 15px;
+}
+
+.checkbox-wrapper .label { font-size: var(--fs-6); }
+
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px 25px;
+}
+
+.contact-item { min-width: 100%; }
+
+.contact-card {
+  background-color: var(--white-1);
+  padding: 20px;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.contact-card .card-icon {
+  background-color: var(--cultured-2);
+  color: var(--red-crayola);
+  font-size: 25px;
+  padding: 13px;
+  border-radius: 50%;
+  transition: var(--transition-1);
+}
+
+.contact-card:is(:hover, :focus) .card-icon {
+  background-color: var(--red-crayola);
+  color: var(--white-1);
+}
+
+.contact-card .card-title { margin-block-end: 5px; }
+
+.contact-card :is(.card-link, .card-address) {
+  font-size: var(--fs-6);
+  transition: var(--transition-1);
+}
+
+.contact-card .card-link:is(:hover, :focus) { color: var(--red-crayola); }
+
 
 
 /*-----------------------------------*\
@@ -712,7 +828,7 @@ body {
 .back-top-btn {
   position: fixed;
   bottom: 10px;
-  right: 20px;
+  right: 10px;
   background-color: var(--royal-blue-light);
   font-size: 18px;
   color: var(--white);
@@ -776,6 +892,19 @@ body {
    */
 
   .blog-card .h3 { --fs-5: 2.6rem; }
+
+
+
+  /**
+   * CONTACT
+   */
+
+   .input-wrapper {
+    display: flex;
+    gap: 15px;
+  }
+
+  .contact-item { min-width: calc(50% - 18px); }
 
 
 
@@ -910,6 +1039,15 @@ body {
   .blog-list { grid-template-columns: 1fr 1fr; }
 
 
+  /**
+   * CONTACT
+   */
+
+   .contact-form { padding: 30px; }
+
+   .contact-item { min-width: calc(50% - 12.5px); }
+
+
 
   /**
    * FOOTER
@@ -932,8 +1070,8 @@ body {
    */
 
   .back-top-btn {
-    bottom: 70px;
-    right: 50px;
+    bottom: 10px;
+    right: 20px;
   }
 
 }
@@ -1105,6 +1243,19 @@ body {
   .blog-list { grid-template-columns: repeat(3, 1fr); }
 
 
+  /**
+   * CONTACT
+   */
+
+   .checkbox-wrapper { margin-block: 20px; }
+
+   .contact-item { min-width: calc(33.33% - 16.66px); }
+ 
+   .contact-card { padding: 30px; }
+ 
+   .contact-card .card-icon { font-size: 32px; }
+
+
 
   /**
    * FOOTER
@@ -1198,4 +1349,50 @@ body {
 
   .cta-banner { margin-block-start: -120px; }
 
+
+
+   /**
+   * CONTACT
+   */
+
+   .contact-form { padding: 50px; }
+
+   .contact-card { gap: 20px; }
+ 
+   .contact-card .card-icon { padding: 15px; }
+
+}
+
+
+.whatsapp_float {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  bottom: 75px;
+  right: 20px;
+  background-color: var(--royal-blue-light);
+  color: var(--white);
+  border-radius: 50px;
+  text-align: center;
+  font-size: 20px;
+  z-index: 100;
+  transition: var(--transition);
+ 
+}
+
+.whatsapp-icon {
+  margin-top: 11px;
+  font-size: 20px;
+}
+
+
+@media screen and (max-width: 767px) {
+  
+  .whatsapp_float {
+      width: 45px;
+      height: 45px;
+      bottom: 75px;
+      right: 10px;
+      
+  }
 }
