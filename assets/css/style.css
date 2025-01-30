@@ -256,7 +256,7 @@ body {
 
 .header-bottom.active {
   position: fixed;
-  top: -81px;
+  top: -84px;
   background-color: var(--white);
   box-shadow: var(--shadow-2);
   animation: slideIn 0.5s var(--cubic-out) forwards;
@@ -425,6 +425,75 @@ body {
 }
 
 
+/*-----------------------------------*\
+  #wealth
+\*-----------------------------------*/
+
+.wealth .section-title { margin-block-end: 50px; }
+
+.wealth-card .card-banner {
+  border-radius: var(--radius-4);
+  overflow: hidden;
+  margin-block-end: 25px;
+}
+
+.wealth-card {
+  padding: 30px;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-4);
+  text-align: center;
+  min-height: 100%;
+}
+
+.wealth-card .card-icon {
+  display: grid;
+  place-items: center; 
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.wealth-card .card-title {
+  font-size: var(--fs-4);
+  transition: var(--transition);
+}
+
+.wealth-card:is(:hover, :focus-within) .card-title { color: var(--royal-blue-light); }
+
+.wealth-card .card-subtitle {
+  
+  margin-block: 10px 15px;
+}
+
+.wealth-card .card-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.wealth-card .card-social-link {
+  background-color: var(--lavender-web);
+  color: var(--royal-blue-light);
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.wealth-card .card-social-link:is(:hover, :focus) {
+  background-color: var(--royal-blue-light);
+  color: var(--white);
+}
+
+.wealth-list {
+  display: grid;
+  gap: 15px;
+}
+
+
 
 
 /*-----------------------------------*\
@@ -478,13 +547,12 @@ body {
 .blog-card .card-badge {
   background-color: var(--royal-blue-light);
   color: var(--white);
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
+  position:relative;
   display: flex;
   gap: 5px;
-  padding: 10px 15px;
-  border-radius: var(--radius-6);
+  padding: 8px;
+  margin-block-start: 20px;
+  max-width: max-content;
 }
 
 .blog-card .card-content { padding: 30px; }
@@ -519,7 +587,13 @@ body {
 
 .blog-card .card-link:is(:hover, :focus)::after { background-color: var(--oxford-blue-1); }
 
+.blog-card .btn {
+  font-size: unset;
 
+  max-width: max-content;
+  margin-block-start: 30px;
+  
+}
 
 
 /*-----------------------------------*\
@@ -528,7 +602,7 @@ body {
 
 .detail-blog-banner { display: none; }
 
-.detail-blog { padding-block-end: 0; }
+.detail-blog { padding-block-end: 50px; }
 
 .detail-blog .section-subtitle { 
   font-size: var(--fs-3);
@@ -961,10 +1035,13 @@ textarea.input-field {
 
 
   /**
-   * DOCTOR
+   * wealth
    */
 
-  .scrollbar-item { min-width: calc(50% - 15px); }
+   .wealth-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
 
 
 
@@ -1190,10 +1267,10 @@ textarea.input-field {
 
 
   /**
-   * DOCTOR
+   * wealth
    */
-
-  .scrollbar-item { min-width: calc(33.33% - 20px); }
+  .wealth-list { grid-template-columns: repeat(4, 1fr); }
+ 
 
 
 
@@ -1312,17 +1389,12 @@ textarea.input-field {
 
 
   /**
-   * DOCTOR
+   * wealth
    */
 
-  .doctor { padding-block-end: 180px; }
+  .wealth { padding-block-end: 180px; }
 
-  .scrollbar-item { min-width: calc(25% - 22.5px); }
-
-  .has-scrollbar {
-    padding-block-end: 0;
-    margin-block-end: 0;
-  }
+  
 
 
 
