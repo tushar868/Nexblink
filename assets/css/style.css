@@ -387,6 +387,7 @@ body {
 }
 
 .service-card {
+  cursor: pointer;
   display: flex;
   align-items: flex-start;
   gap: 30px;
@@ -394,6 +395,7 @@ body {
   border: 1px solid var(--light-gray);
   border-radius: var(--radius-4);
   padding: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
 .service-card .card-icon {
@@ -403,7 +405,29 @@ body {
 
 .service-card .card-title { margin-block-end: 8px; }
 
+.card-services {
+  
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
 
+.service-card.active .card-services {
+  max-height: 180px;
+  opacity: 1;
+  margin-block-start: 30px;
+}
+
+.card-services ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-services li {
+  padding: 2px 0;
+}
 
 
 
@@ -500,14 +524,14 @@ body {
   #CTA
 \*-----------------------------------*/
 
-.cta { background-color: var(--oxford-blue-1); }
+.cta { background-color: var(--white); }
 
 .cta-banner { margin-block-end: 50px; }
 
 .cta .section-subtitle { text-transform: capitalize; }
 
 .cta .section-title {
-  color: var(--white);
+  color: var(--oxford-blue-1);
   font-size: var(--fs-3);
   margin-block-end: 30px;
 }

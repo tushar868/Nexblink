@@ -58,3 +58,8 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
+
+
+function toggleCard(card) {
+  card.classList.toggle("active");
+}
