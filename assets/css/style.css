@@ -314,7 +314,7 @@ body {
 
 .navbar.active {
   visibility: visible;
-  max-height: 244px;
+  max-height: 400px;
   transition-duration: 0.5s;
 }
 
@@ -443,7 +443,7 @@ body {
 
 .about-banner { margin-block-end: 50px; }
 
-.about .section-text-1 { margin-block: 25px 15px; }
+.about .section-text-1 , .section-text { margin-block: 25px 15px; text-align: justify; }
 
 .about .btn {
   font-size: unset;
@@ -589,7 +589,7 @@ body {
 
 .blog-card .card-title:is(:hover, :focus) { color: var(--royal-blue-light); }
 
-.blog-card .card-text { margin-block: 15px; }
+.blog-card .card-text { margin-block: 15px; text-align: justify; }
 
 .blog-card .card-link {
   position: relative;
