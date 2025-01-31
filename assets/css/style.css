@@ -60,6 +60,7 @@
   --fs-5: 2.2rem;
   --fs-6: 1.8rem;
   --fs-7: 1.6rem;
+  --fs-8: 4.1rem;
 
   --fw-800: 800;
   --fw-700: 700;
@@ -185,6 +186,7 @@ body {
 }
 
 .h1,
+.h12,
 .h2,
 .h3 {
   font-family: var(--ff-poppins);
@@ -197,9 +199,11 @@ body {
 }
 
 .h2,
+.h12,
 .h3 { color: var(--oxford-blue-2); }
 
 .h2 { font-size: var(--fs-1); }
+.h12 { font-size: var(--fs-8); }
 
 .h3 { font-size: var(--fs-5); }
 
